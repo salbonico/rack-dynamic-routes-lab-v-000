@@ -1,4 +1,4 @@
-require 'pry'
+require 'pry-0.12.2'
 class Application
 
 
