@@ -9,8 +9,8 @@ class Application
         if req.path.match(/items/)
           item = req.path.split(/items/).last
           if @@items.detect{|item| item["name"] == item} != nil
-            
-          
+
+
         else
           resp.write "Route not found"
           resp.status = 404
