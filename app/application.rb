@@ -14,7 +14,7 @@ class Application
             matched_item = @@items.detect{|f| f.name == item}
             resp.write "#{matched_item.price}"
           else
-            
+
           end
 
         else
