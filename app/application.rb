@@ -10,8 +10,11 @@ class Application
         if req.path.match(/items/)
          item = req.path.split(/items/).last
          item[0] = ""
-         matched_item = @@items.detect{|f| f.name == item}
-        
+          if @@items.detect{|f| f.name == item} != nil
+            matched_item = @@items.detect{|f| f.name == item}
+            return matched_item.price
+          end
+
         else
           resp.write "Route not found"
           resp.status = 404
