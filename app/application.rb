@@ -9,7 +9,7 @@ class Application
 
         if req.path.match(/items/)
           item = req.path.split(/items/).last
-          @@items.detect{|item| item["name"] == item}
+          what = @@items.detect{|item| item["name"] == item}
         else
           resp.write "Route not found"
           resp.status = 404
