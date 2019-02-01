@@ -14,7 +14,8 @@ class Application
             matched_item = @@items.detect{|f| f.name == item}
             resp.write "#{matched_item.price}"
           else
-
+            resp.write "Item not found"
+            resp.status = 400
           end
 
         else
