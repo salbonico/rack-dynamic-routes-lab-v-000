@@ -1,3 +1,4 @@
+require 'pry'
 class Application
 
 
@@ -7,8 +8,9 @@ class Application
       req = Rack::Request.new(env)
         if req.path.match(/items/)
           item = req.path.split(/items/).last
-          @@items.detect{|item| item["name"] == item}
-        
+          if @@items.detect{|item| item["name"] == item} != nil
+            
+          
         else
           resp.write "Route not found"
           resp.status = 404
