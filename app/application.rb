@@ -12,7 +12,9 @@ class Application
          item[0] = ""
           if @@items.detect{|f| f.name == item} != nil
             matched_item = @@items.detect{|f| f.name == item}
-            return matched_item.price
+            resp.write "#{matched_item.price}"
+          else
+            
           end
 
         else
